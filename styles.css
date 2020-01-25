@@ -1,0 +1,167 @@
+* {
+	font-family: '.SF NS', 'Helvetica Neue', monospace;
+}
+
+body {
+	display: grid;
+	grid-template-rows: 2;
+	position: relative;
+}
+
+.nav {
+	grid-row: 1;
+	display: grid;
+	grid-template-columns: 3;
+	margin-bottom: 10px;
+	height: 8vh;
+	width: calc(100vw - 20px);
+}
+
+.nav .col h2 {
+	margin: 10px;
+}
+
+.nav .col * {
+	margin-top: 10px;
+}
+
+.nav .col-1 {
+	grid-column: 1;
+}
+
+.nav .col-2 {
+	grid-column: 2;
+	text-align: center;
+	margin-top: calc(4vh - 15.5px);
+}
+
+.nav .col-2 input {
+	font-size: 16px;
+	width: 32px;
+	border-radius: 5px;
+	border: 0.5px solid black;
+	padding: 5px;
+}
+
+.nav .col-2 .label {
+	font-size: 16px;
+	display: none;
+}
+
+.nav .col-3 {
+	grid-column: 3;
+	text-align: center;
+}
+/* Subject to change: */
+.col-3 {
+	visibility: hidden;
+}
+
+.container {
+	grid-row: 2;
+	display: grid;
+	position: relative;
+	grid-template-columns: 3;
+	height: calc(100vh - 8vh - 30px);
+}
+
+.container .reload {
+	grid-column: 1 / span 2;
+	font-size: 24px;
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	border-radius: 5px;
+	padding: 0px 3px 4px 3px;
+	line-height: 20px;
+}
+
+.container .reload:hover {
+	cursor: pointer;
+}
+
+.container .preview {
+	grid-column: 1 / 3;
+	margin: 10px;
+	border: 1px solid gray;
+	color: white;
+	background-color: black;
+	padding: 5px;
+	display: flex;
+  	flex-direction: center;
+  	justify-content: center;
+  	text-align: center;
+}
+
+.container .preview .crossword {
+	min-height: calc(50vh - 4vh - 15px);
+	max-width: calc(66.66vw - 36px);
+	min-width: calc(33.33vw - 60px - 30px);
+	background-color: white;
+}
+
+.container .wordlist {
+	grid-column: 3 / 3;
+	margin: 10px;
+	border: 1px solid black;
+	padding: 5px;
+}
+
+.container .wordlist input {
+	position: absolute;
+	top: calc(100vh - 8vh - 30px - 60px);
+	width: calc(22vw + 1.6em);
+	margin: 10px;
+	font-size: 16px;
+	right: calc(10px);
+	border: 1px solid black;
+	padding: 3px;
+}
+
+@media (min-width: 1200px) {
+	.container {
+		display: grid !important;
+	}
+	.container .wordlist {
+		width: auto !important;
+	}
+}
+
+/* Medium Screen */
+@media (max-width: 1199px) {
+	.container {
+		display: block !important;
+		height: calc(100vh - 8vh - 30px);
+	}
+	.nav {
+		grid-template-columns: 2 !important;
+	}
+	.col-2 {
+		margin: 0px !important;
+		text-align: right !important;
+	}
+	.nav .col-2 .label {
+		display: inline-block !important;
+	}
+	.col-3 {
+		display: none;
+	}
+	.container .wordlist {
+		display: block !important;
+		width: calc(100vw - 40px) !important;
+		height: calc(50vh - 8vh - 30px);
+	}
+	.container .preview {
+		display: block !important;
+		width: calc(100vw - 40px) !important;
+
+	}
+}
+
+/* Small Screen */
+@media (max-width: 768px) {
+	.container .wordlist input {
+		width: calc(100vw - 40px - 10px) !important;
+	}
+}
+
